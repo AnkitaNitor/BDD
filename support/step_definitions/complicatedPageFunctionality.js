@@ -6,6 +6,7 @@ const { expect } = require('@playwright/test');
 const dataUtils = new DataUtils();
 
 Given("I navigate to complicated page", async function ({page}) {
+    //test github flow
     const pageConstants = new PageConstants(page);
     await page.goto("/automation/");
     await pageConstants.automationPage.bigPageLink.click();
