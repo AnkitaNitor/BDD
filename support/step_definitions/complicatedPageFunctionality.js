@@ -5,7 +5,7 @@ const { DataUtils } = require("../../utils/DataUtils");
 const { expect } = require('@playwright/test');
 const dataUtils = new DataUtils();
 
-Given("I navigate to complicated page", async function ({page}) {
+Given("I navigate to complicated page @smoke", async function ({page}) {
     //test github flow
     const pageConstants = new PageConstants(page);
     await page.goto("/automation/");
@@ -13,7 +13,7 @@ Given("I navigate to complicated page", async function ({page}) {
     await page.waitForLoadState("networkidle");
 });
 
-Then("I validate basic functionlaity on complicated page", async function ({page}) {
+Then("I validate basic functionlaity on complicated page @smoke", async function ({page}) {
     const pageConstants = new PageConstants(page);
     await expect(pageConstants.complicatedPage.firstButton).toBeVisible();
     await pageConstants.complicatedPage.firstNameTextBox.type("this is test");
